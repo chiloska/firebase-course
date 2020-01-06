@@ -6,6 +6,12 @@
 export const environment = {
   production: false,
   firebase: {
-
+    apiKey: "AIzaSyAwLj_8ZdqhP4xCBZIeaZ5t-Zc0H-njbRw",
+    authDomain: "learningfirebase-2b0de.firebaseapp.com",
+    databaseURL: "https://learningfirebase-2b0de.firebaseio.com",
+    projectId: "learningfirebase-2b0de",
+    storageBucket: "learningfirebase-2b0de.appspot.com",
+    messagingSenderId: "21176008169",
+    appId: "1:21176008169:web:9412e7bdabc29f42d8df78" 
   }
 };

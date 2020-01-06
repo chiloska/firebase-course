@@ -1,15 +1,13 @@
-
 <div class="courses-panel">
 
     <h3>All Courses</h3>
 
-
+    {{courses | json}}
     <mat-tab-group>
 
         <mat-tab label="Beginners">
 
-            <courses-card-list
-                    [courses]="[]">
+            <courses-card-list [courses]="[]">
 
             </courses-card-list>
 
@@ -17,10 +15,7 @@
 
         <mat-tab label="Advanced">
 
-            <courses-card-list
-                    [courses]="[]"
-
-            ></courses-card-list>
+            <courses-card-list [courses]="[]"></courses-card-list>
 
         </mat-tab>
 
@@ -29,4 +24,3 @@
 
 
 </div>
-
