@@ -12,16 +12,20 @@ import { CoursesService } from '../services/courses.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    courses: Course[] = [];
+    coursesBeginner$: Observable<Course[]>;
+    coursesAdvanced$: Observable<Course[]>;
 
     constructor(private coursesServices: CoursesService) {
 
     }
 
     ngOnInit() {
-        this.coursesServices.getAll().subscribe(courses => {
-            this.courses = courses;
-        });
+        this.coursesBeginner$ = this.coursesServices.getAll().pipe(
+            map(courses => courses.filter(course => course.categories.includes('BEGINNER')))
+        );
+        this.coursesAdvanced$ = this.coursesServices.getAll().pipe(
+            map(courses => courses.filter(course => course.categories.includes('ADVANCED')))
+        );
     }
 
 }
